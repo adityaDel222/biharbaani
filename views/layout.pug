@@ -6,14 +6,14 @@ html(lang="hi")
         meta(http-equiv="content-language", content="hi")
         meta(http-equiv="content-type", content="text/html;charset=UTF-8")
         title Bihar Baani
-        link(rel="icon", href="/logo_small.jpg", type="image/jpg")
+        link(rel="icon", href="/logo_dark.jpg", type="image/jpg")
         link(rel="stylesheet", href="/style.css")
         link(rel="stylesheet", href="/styleM.css")
         script(defer, src="https://code.jquery.com/jquery-3.5.1.js")
         script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js")
         script(defer, src="/script.js")
     body
-        a.enter-admin(href="/admin") Admin
+        //- a.enter-admin(href="/admin") Admin
         span.show-menu-icon.fas.fa-bars
         span.hide-menu-icon.fas.fa-times
         .hidden-menu
@@ -43,6 +43,9 @@ html(lang="hi")
                 li
                     a(href="/sampark") संपर्क करें
         header
+            .weather
+            //- .logo
+                img(src="./logo.jpg", alt="BiharBaani")
             .header-logo
                 h1
                     a(href="/")
@@ -52,6 +55,17 @@ html(lang="hi")
                             span(class="bb", style="font-family: Harrington;") B
                             span AANI
                 p#todayDate
+            .top-contact-links
+                a(href="")
+                    span.fab.fa-facebook-square
+                a(href="")
+                    span.fab.fa-twitter-square
+                a(href="")
+                    span.fab.fa-linkedin
+                a(href="")
+                    span.fab.fa-instagram-square
+                a(href="")
+                    span.fas.fa-envelope-open
         .container
             nav
                 ul
@@ -123,6 +137,8 @@ html(lang="hi")
                             a(href="/sampark") संपर्क करें
             block content
             section
+                p(style="text-align: center; margin: 0;") Advertisement
+                img(src="https://www.health.gov.au/sites/default/files/images/publications/2020/03/coronavirus-covid-19-print-ads-good-hygiene-is-in-your-hands_0.jpg", alt="Advertisement")
         footer
             h3 Follow us on
             div
