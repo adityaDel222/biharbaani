@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="hi")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="content-language", content="hi")
+        meta(http-equiv="content-type", content="text/html;charset=UTF-8")
+        title Bihar Baani | Admin
+        link(rel="icon", href="/logo_small.jpg", type="image/jpg")
+        link(rel="stylesheet", href="/style.css")
+        link(rel="stylesheet", href="/styleM.css")
+        link(rel="stylesheet", href="/admin.css")
+        script(defer, src="https://code.jquery.com/jquery-3.5.1.js")
+        script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js")
+        script(defer, src="/script.js")
+    body
+        header
+            .header-logo
+                h1
+                    a(href="/")
+                        span.bihar BIHAR
+                        span.baani BAANI
+                p#todayDate
+        .container
+            block content
+        footer
+            h3 Follow us on
+            div
+                a(href="")
+                    span.fab.fa-facebook-square
+                a(href="")
+                    span.fab.fa-twitter-square
+                a(href="")
+                    span.fab.fa-linkedin
+                a(href="")
+                    span.fab.fa-instagram-square
+            h3 Write to us at
+            a.mail(href="")
+                span.fas.fa-envelope-open
+            p
+                span Designed and developed by
+                span
+                    a(href="https://aditya-raj.netlify.app/", target="_blank") Aditya Raj

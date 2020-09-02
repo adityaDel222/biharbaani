@@ -1,0 +1,21 @@
+extends layout
+block content
+    .mini-articles-list
+        h3= hindiHeading
+        each article, i in articles
+            if i < 5
+                .mini-article-item
+                    .mini-article-item-left
+                        h2
+                            a(href="/article/"+article.url)= article.title
+                        - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
+                        if article.time.hourDB < 12
+                            - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
+                        else if article.time.hourDB == 12
+                            - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' PM IST'
+                        else
+                            - DT += ' ' + (article.time.hourDB - 12) + ':' + article.time.minuteDB + ' PM IST'
+                        p#datetime= DT
+                        p= article.subtitle
+                    .mini-article-item-right
+                        img(src=article.image.url)

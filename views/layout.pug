@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+html(lang="hi")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="content-language", content="hi")
+        meta(http-equiv="content-type", content="text/html;charset=UTF-8")
+        title Bihar Baani
+        link(rel="icon", href="/logo_small.jpg", type="image/jpg")
+        link(rel="stylesheet", href="/style.css")
+        link(rel="stylesheet", href="/styleM.css")
+        script(defer, src="https://code.jquery.com/jquery-3.5.1.js")
+        script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js")
+        script(defer, src="/script.js")
+    body
+        a.enter-admin(href="/admin") Admin
+        span.show-menu-icon.fas.fa-bars
+        span.hide-menu-icon.fas.fa-times
+        .hidden-menu
+            ul
+                li
+                    a(href="/admin") Admin
+                li
+                    a(href="/") होम
+                li
+                    a(href="/desh-videsh") देश-विदेश
+                li
+                    a(href="/bihar-breaking") बिहार ब्रेकिंग
+                li
+                    a(href="/raajneeti") राजनीति
+                li
+                    a(href="/sampaadkiya") संपादकीय
+                li
+                    a(href="/vyakti-vishesh") व्यक्ति-विशेष
+                li
+                    a(href="/paryatan") पर्यटन
+                li
+                    a(href="/khel-jagat") खेल जगत
+                li
+                    a(href="/manoranjan") मनोरंजन
+                li
+                    a(href="/aapke-sandesh") आपके संदेश
+                li
+                    a(href="/sampark") संपर्क करें
+        header
+            .header-logo
+                h1
+                    a(href="/")
+                        span.biharbaani
+                            span(class="bb", style="font-family: Harrington;") B
+                            span IHAR 
+                            span(class="bb", style="font-family: Harrington;") B
+                            span AANI
+                p#todayDate
+        .container
+            nav
+                ul
+                    if heading === 'Headlines'
+                        li#active-link
+                            a(href="/") होम
+                    else
+                        li
+                            a(href="/") होम
+                    if heading === 'Desh-Videsh'
+                        li#active-link
+                            a(href="/desh-videsh") देश-विदेश
+                    else
+                        li
+                            a(href="/desh-videsh") देश-विदेश
+                    if heading === 'Bihar-Breaking'
+                        li#active-link
+                            a(href="/bihar-breaking") बिहार ब्रेकिंग
+                    else
+                        li
+                            a(href="/bihar-breaking") बिहार ब्रेकिंग
+                    if heading === 'Raajneeti'
+                        li#active-link
+                            a(href="/raajneeti") राजनीति
+                    else
+                        li
+                            a(href="/raajneeti") राजनीति
+                    if heading === 'Sampaadkiya'
+                        li#active-link
+                            a(href="/sampaadkiya") संपादकीय
+                    else
+                        li
+                            a(href="/sampaadkiya") संपादकीय
+                    if heading === 'Vyakti-Vishesh'
+                        li#active-link
+                            a(href="/vyakti-vishesh") व्यक्ति-विशेष
+                    else
+                        li
+                            a(href="/vyakti-vishesh") व्यक्ति-विशेष
+                    if heading === 'Paryatan'
+                        li#active-link
+                            a(href="/paryatan") पर्यटन
+                    else
+                        li
+                            a(href="/paryatan") पर्यटन
+                    if heading === 'Khel-Jagat'
+                        li#active-link
+                            a(href="/khel-jagat") खेल जगत
+                    else
+                        li
+                            a(href="/khel-jagat") खेल जगत
+                    if heading === 'Manoranjan'
+                        li#active-link
+                            a(href="/manoranjan") मनोरंजन
+                    else
+                        li
+                            a(href="/manoranjan") मनोरंजन
+                    if heading === 'Aapke-Sandesh'
+                        li#active-link
+                            a(href="/aapke-sandesh") आपके संदेश
+                    else
+                        li
+                            a(href="/aapke-sandesh") आपके संदेश
+                    if heading === 'Sampark'
+                        li#active-link
+                            a(href="/sampark") संपर्क करें
+                    else
+                        li
+                            a(href="/sampark") संपर्क करें
+            block content
+            section
+        footer
+            h3 Follow us on
+            div
+                a(href="")
+                    span.fab.fa-facebook-square
+                a(href="")
+                    span.fab.fa-twitter-square
+                a(href="")
+                    span.fab.fa-linkedin
+                a(href="")
+                    span.fab.fa-instagram-square
+            h3 Write to us at
+            a.mail(href="")
+                span.fas.fa-envelope-open
+            p
+                span Designed and developed by
+                span
+                    a(href="https://aditya-raj.netlify.app/", target="_blank") Aditya Raj

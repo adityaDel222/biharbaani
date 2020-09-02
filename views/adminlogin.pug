@@ -1,0 +1,7 @@
+extends adminlayout
+block content
+    h3 Administrator Login
+    form(action="/admin", method="POST")
+        input(type="text", name="username", placeholder="Username", required, autofocus)
+        input(type="password", name="password", placeholder="Password", required)
+        input(type="submit", name="submit", value="Login")
