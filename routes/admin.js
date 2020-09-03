@@ -15,6 +15,7 @@ router.use(session({
     secure: true,
     ephemeral: true
 }));
+
 router.use((req, res, next) => {
     if(req.session && req.session.user) {
         admin.findOne({ username: req.session.user.username }, (err, user) => {
@@ -30,6 +31,7 @@ router.use((req, res, next) => {
         next();
     }
 });
+
 router.get('/', (req, res) => {
     if(req.user) {
         res.redirect('/admin/addarticle');
@@ -37,6 +39,7 @@ router.get('/', (req, res) => {
         res.render('adminlogin');
     }
 });
+
 router.get('/addarticle', (req, res) => {
     if(!req.user) {
         res.redirect('/admin');
@@ -82,6 +85,7 @@ router.get('/logout', (req, res) => {
     req.session.reset();
     res.redirect('/admin');
 });
+
 router.post('/', (req, res) => {
     const newAdmin = new admin({
         username: req.body.username,
@@ -97,19 +101,18 @@ router.post('/', (req, res) => {
                 res.redirect('/admin/addarticle');
             } else {
                 res.redirect('/admin');
+                alert("Invalid username or password");
                 console.log('Invalid username or password');
             }
         }
     });
 });
+
 router.post('/submit', (req, res) => {
     console.log('Title: ' + req.body.title);
     console.log('Subtitle: ' + req.body.subtitle);
     console.log('Category: ' + req.body.category);
-    const articleURL = req.body.title.replace(/ /g, "-");
-    console.log('URL: ' + articleURL);
     const newArticle = new articles({
-        url: articleURL,
         title: req.body.title,
         date: {
             dayDB: req.body.dayselect,

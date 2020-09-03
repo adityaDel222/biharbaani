@@ -206,13 +206,12 @@ router.get('/sampark/', (req, res) => {
     res.render('sampark');
 });
 
-router.get('/article/:url', (req, res) => {
-    articles.findOne({ url: req.params.url }, (err, article) => {
+router.get('/article/:id', (req, res) => {
+    articles.findById(req.params.id, (err, article) => {
         if(err) {
             console.error(err);
         } else {
             console.log('Title: ' + article.title);
-            console.log('URL: ' + article.url);
             articles.find({ category: article.category }, (err, relArticlesList) => {
                 if(err) {
                     console.error(err);

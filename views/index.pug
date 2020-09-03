@@ -7,7 +7,7 @@ block content
                 .mini-article-item
                     .mini-article-item-left
                         h2
-                            a(href="/article/"+article.url)= article.title
+                            a(href="/article/"+article.id)= article.title
                         - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
                         if article.time.hourDB < 12
                             - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
