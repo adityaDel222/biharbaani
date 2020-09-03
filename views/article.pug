@@ -1,53 +1,213 @@
-extends layout
-block content
-    .container-article
-        .full-article
-            p#article-path
-                span
+<!DOCTYPE html>
+html(lang="hi")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="content-language", content="hi")
+        meta(http-equiv="content-type", content="text/html;charset=UTF-8")
+        title= article.title + ' | Bihar Baani'
+        meta(name="description", content=article.subtitle)
+        meta(property="og:title", content=article.title)
+        meta(property="og:url", content="https://biharbaani.herokuapp.com/article/"+article.url)
+        meta(property="og:description", content=article.subtitle)
+        meta(property="og:image", content=article.image.url)
+        meta(property="og:type", content="article")
+        link(rel="icon", href="/logo_dark.jpg", type="image/jpg")
+        link(rel="stylesheet", href="/style.css")
+        link(rel="stylesheet", href="/styleM.css")
+        script(defer, src="https://code.jquery.com/jquery-3.5.1.js")
+        script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js")
+        script(defer, src="/script.js")
+    body
+        //- a.enter-admin(href="/admin") Admin
+        span.show-menu-icon.fas.fa-bars
+        span.hide-menu-icon.fas.fa-times
+        .hidden-menu
+            ul
+                li
+                    a(href="/admin") Admin
+                li
                     a(href="/") होम
-                span= ' > '
+                li
+                    a(href="/desh-videsh") देश-विदेश
+                li
+                    a(href="/bihar-breaking") बिहार ब्रेकिंग
+                li
+                    a(href="/raajneeti") राजनीति
+                li
+                    a(href="/sampaadkiya") संपादकीय
+                li
+                    a(href="/vyakti-vishesh") व्यक्ति-विशेष
+                li
+                    a(href="/paryatan") पर्यटन
+                li
+                    a(href="/khel-jagat") खेल जगत
+                li
+                    a(href="/manoranjan") मनोरंजन
+                li
+                    a(href="/aapke-sandesh") आपके संदेश
+                li
+                    a(href="/sampark") संपर्क करें
+        header
+            .weather
+            //- .logo
+                img(src="./logo.jpg", alt="BiharBaani")
+            .header-logo
+                h1
+                    a(href="/")
+                        span.biharbaani
+                            span(class="bb", style="font-family: Harrington;") B
+                            span IHAR 
+                            span(class="bb", style="font-family: Harrington;") B
+                            span AANI
+                p#todayDate
+            .top-contact-links
+                a(href="")
+                    span.fab.fa-facebook-square
+                a(href="")
+                    span.fab.fa-twitter-square
+                a(href="")
+                    span.fab.fa-linkedin
+                a(href="")
+                    span.fab.fa-instagram-square
+                a(href="")
+                    span.fas.fa-envelope-open
+        .container
+            nav
+                ul
+                    if heading === 'Headlines'
+                        li#active-link
+                            a(href="/") होम
+                    else
+                        li
+                            a(href="/") होम
+                    if heading === 'Desh-Videsh'
+                        li#active-link
+                            a(href="/desh-videsh") देश-विदेश
+                    else
+                        li
+                            a(href="/desh-videsh") देश-विदेश
+                    if heading === 'Bihar-Breaking'
+                        li#active-link
+                            a(href="/bihar-breaking") बिहार ब्रेकिंग
+                    else
+                        li
+                            a(href="/bihar-breaking") बिहार ब्रेकिंग
+                    if heading === 'Raajneeti'
+                        li#active-link
+                            a(href="/raajneeti") राजनीति
+                    else
+                        li
+                            a(href="/raajneeti") राजनीति
+                    if heading === 'Sampaadkiya'
+                        li#active-link
+                            a(href="/sampaadkiya") संपादकीय
+                    else
+                        li
+                            a(href="/sampaadkiya") संपादकीय
+                    if heading === 'Vyakti-Vishesh'
+                        li#active-link
+                            a(href="/vyakti-vishesh") व्यक्ति-विशेष
+                    else
+                        li
+                            a(href="/vyakti-vishesh") व्यक्ति-विशेष
+                    if heading === 'Paryatan'
+                        li#active-link
+                            a(href="/paryatan") पर्यटन
+                    else
+                        li
+                            a(href="/paryatan") पर्यटन
+                    if heading === 'Khel-Jagat'
+                        li#active-link
+                            a(href="/khel-jagat") खेल जगत
+                    else
+                        li
+                            a(href="/khel-jagat") खेल जगत
+                    if heading === 'Manoranjan'
+                        li#active-link
+                            a(href="/manoranjan") मनोरंजन
+                    else
+                        li
+                            a(href="/manoranjan") मनोरंजन
+                    if heading === 'Aapke-Sandesh'
+                        li#active-link
+                            a(href="/aapke-sandesh") आपके संदेश
+                    else
+                        li
+                            a(href="/aapke-sandesh") आपके संदेश
+                    if heading === 'Sampark'
+                        li#active-link
+                            a(href="/sampark") संपर्क करें
+                    else
+                        li
+                            a(href="/sampark") संपर्क करें
+            .container-article
+                .full-article
+                    p#article-path
+                        span
+                            a(href="/") होम
+                        span= ' > '
+                        span
+                            a(href="/" + article.category)= hindiHeading
+                        span= ' > ' + article.title
+                    h1= article.title
+                    .article-illustration
+                        img(src=article.image.url)
+                        p= article.image.caption
+                    h3= article.subtitle
+                    - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
+                    if article.time.hourDB < 12
+                        - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
+                    else if article.time.hourDB == 12
+                        - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' PM IST'
+                    else
+                        - DT += ' ' + (article.time.hourDB - 12) + ':' + article.time.minuteDB + ' PM IST'
+                    p#datetime= DT
+                    p#by= article.by
+                    p#content
+                        span#location= article.location + ':'
+                        span#content= article.content.para1
+                    p#content= article.content.para2
+                    p#content= article.content.para3
+                    p#content= article.content.para4
+                    p#content= article.content.para5
+                .related-articles.mini-articles-list
+                    h3 संबंधित आलेख
+                    each relArticle, i in relArticlesList
+                        if i < 5 && relArticle.id != article.id
+                            .mini-article-item
+                                .mini-article-item-left
+                                    h2
+                                        a(href="/article/"+relArticle.id)= relArticle.title
+                                    - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
+                                    if article.time.hourDB < 12
+                                        - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
+                                    else if article.time.hourDB == 12
+                                        - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' PM IST'
+                                    else
+                                        - DT += ' ' + (article.time.hourDB - 12) + ':' + article.time.minuteDB + ' PM IST'
+                                    p#datetime= DT
+                                    p= relArticle.subtitle
+                                .mini-article-item-right
+                                    img(src=relArticle.image.url)
+            section
+                p(style="text-align: center; margin: 0;") Advertisement
+                img(src="https://www.health.gov.au/sites/default/files/images/publications/2020/03/coronavirus-covid-19-print-ads-good-hygiene-is-in-your-hands_0.jpg", alt="Advertisement")
+        footer
+            h3 Follow us on
+            div
+                a(href="")
+                    span.fab.fa-facebook-square
+                a(href="")
+                    span.fab.fa-twitter-square
+                a(href="")
+                    span.fab.fa-linkedin
+                a(href="")
+                    span.fab.fa-instagram-square
+            h3 Write to us at
+            a.mail(href="")
+                span.fas.fa-envelope-open
+            p
+                span Designed and developed by
                 span
-                    a(href="/" + article.category)= hindiHeading
-                span= ' > ' + article.title
-            h1= article.title
-            .article-illustration
-                img(src=article.image.url)
-                p= article.image.caption
-            h3= article.subtitle
-            - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
-            if article.time.hourDB < 12
-                - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
-            else if article.time.hourDB == 12
-                - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' PM IST'
-            else
-                - DT += ' ' + (article.time.hourDB - 12) + ':' + article.time.minuteDB + ' PM IST'
-            p#datetime= DT
-            p#by= article.by
-            p#content
-                span#location= article.location + ':'
-                span#content= article.content.para1
-            p#content= article.content.para2
-            p#content= article.content.para3
-            p#content= article.content.para4
-            p#content= article.content.para5
-        .related-articles.mini-articles-list
-            h3 संबंधित आलेख
-            each relArticle, i in relArticlesList
-                if i < 5 && relArticle.id != article.id
-                    .mini-article-item
-                        .mini-article-item-left
-                            h2
-                                a(href="/article/"+relArticle.id)= relArticle.title
-                            - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
-                            if article.time.hourDB < 12
-                                - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
-                            else if article.time.hourDB == 12
-                                - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' PM IST'
-                            else
-                                - DT += ' ' + (article.time.hourDB - 12) + ':' + article.time.minuteDB + ' PM IST'
-                            p#datetime= DT
-                            p= relArticle.subtitle
-                        .mini-article-item-right
-                            img(src=relArticle.image.url)
-        script
-            document.title = article.title;
+                    a(href="https://aditya-raj.netlify.app/", target="_blank") Aditya Raj

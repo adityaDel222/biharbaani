@@ -10,11 +10,7 @@
         margin: 0;
         color: #333;
         scroll-behavior: smooth;
-        background-color: #fafad2;
-        /* display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; */
+        background-color: #fcfce3;
     }
     body, input, select, textarea {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,21 +39,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #fafad2;
+        background-color: #fcfce3;
         position: sticky;
         top: 0;
         z-index: 2;
-        /* border-bottom: 3px double #333; */
-    }
-    .logo img {
-        position: absolute;
-        top: 10px;
-        left: 75px;
-        width: 150px;
-        border-radius: 50%;
-        /* border: 2px solid #000; */
-        /* border: 5px solid hsla(200, 50%, 30%, 1); */
-        box-shadow: 0 0 5px 3px hsla(200, 50%, 30%, 1);
     }
     .header-logo {
         display: flex;
@@ -74,13 +59,11 @@
     }
     .header-logo h1 .biharbaani {
         font-family: 'Times New Roman', Times, serif;
-        /* color: rgb(150, 100, 0); */
         color: #333;
         text-shadow: 1px 1px 3px rgb(150, 100, 0);
         letter-spacing: 7px;
     }
     .header-logo .bb {
-        /* color: rgb(150, 100, 0); */
         font-size: 72px;
         transition: var(--navbar-transition-speed);
     }
@@ -142,16 +125,12 @@
         transition: 0.25s;
         border-bottom: 1px dotted #333;
         background-color: rgba(255, 230, 0, 0.75);
-        /* background-color: hsla(200, 50%, 30%, 1); */
     }
     nav ul li#active-link {
         border-left: 4px solid rgb(150, 100, 0);
-        /* border-left: 4px solid hsla(50, 50%, 0%, 1); */
         border-bottom: none;
         box-shadow: 0 0.5px 1px 1px #ddd;
-        /* background-image: linear-gradient(to right, #fff, #fafad2); */
         background-color: rgba(255, 230, 0, 0.75);
-        /* background-color: hsla(200, 50%, 30%, 1); */
     }
     nav ul li:hover {
         transform: translateX(5px);
@@ -170,10 +149,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #fcfce3;
-        /* border-left: 3px double #333; */
-        /* border-right: 3px double #333; */
-        /* border-top: 3px double #333; */
+        background-color: #fff;
         box-shadow: inset 0 3px 1px #333;
         padding: 10px 50px;
     }
@@ -217,7 +193,7 @@
         min-width: 15%;
         max-width: 15%;
         padding: 20px;
-        background-color: #fafad2;
+        background-color: #fcfce3;
         min-height: 750px;
     }
     .container section img {

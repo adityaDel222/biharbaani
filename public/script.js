@@ -13,14 +13,14 @@ $(document).ready(() => {
             $('.header-logo h1').css('font-size', '30px');
             $('.bb').css('font-size', '30px');
             $('#todayDate').css('font-size', '15px');
-            $('header').css('background-color', '#fcfce5');
+            $('header').css('background-color', '#fcfce3');
         } else {
             $('header').css('box-shadow', 'none');
             $('.header-logo').css('padding', '5px');
             $('.header-logo h1').css('font-size', '50px');
             $('.bb').css('font-size', '72px');
             $('#todayDate').css('font-size', '18px');
-            $('header').css('background-color', '#fafad2');
+            $('header').css('background-color', '#fcfce3');
         }
     });
 });
