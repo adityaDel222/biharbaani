@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/desh-videsh/', (req, res) => {
@@ -39,7 +39,7 @@ router.get('/desh-videsh/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/bihar-breaking/', (req, res) => {
@@ -59,7 +59,7 @@ router.get('/bihar-breaking/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/raajneeti/', (req, res) => {
@@ -79,7 +79,7 @@ router.get('/raajneeti/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/sampaadkiya/', (req, res) => {
@@ -99,7 +99,7 @@ router.get('/sampaadkiya/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/vyakti-vishesh/', (req, res) => {
@@ -119,7 +119,7 @@ router.get('/vyakti-vishesh/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/paryatan/', (req, res) => {
@@ -139,7 +139,7 @@ router.get('/paryatan/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/khel-jagat/', (req, res) => {
@@ -159,7 +159,7 @@ router.get('/khel-jagat/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/manoranjan/', (req, res) => {
@@ -179,7 +179,7 @@ router.get('/manoranjan/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/aapke-sandesh/', (req, res) => {
@@ -199,7 +199,7 @@ router.get('/aapke-sandesh/', (req, res) => {
                 articles: articles
             });
         }
-    });
+    }).limit(100);
 });
 
 router.get('/sampark/', (req, res) => {
@@ -248,7 +248,7 @@ router.get('/article/:id', (req, res) => {
                         relArticlesList: relArticlesList
                     });
                 }
-            });
+            }).limit(10);
         }
     });
 });

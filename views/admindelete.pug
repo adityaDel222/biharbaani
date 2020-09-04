@@ -10,9 +10,9 @@ block content
         each article, i in articles
             if i % 2 == 0
                 p(class="even-item")
-                    a(href="/article/"+article.url)= article.title
+                    a(href="/article/"+article.id)= article.title
                     a(href="/admin/deletearticle/"+article.id, onclick="return confirm('Are you sure you want to delete the article?')") Delete
             else
                 p(class="odd-item")
-                    a(href="/article/"+article.url)= article.title
+                    a(href="/article/"+article.id)= article.title
                     a(href="/admin/deletearticle/"+article.id, onclick="return confirm('Are you sure you want to delete the article?')") Delete
