@@ -5,8 +5,9 @@ html(lang="hi")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="content-language", content="hi")
         meta(http-equiv="content-type", content="text/html;charset=UTF-8")
-        title Bihar Baani | Admin
-        link(rel="icon", href="/logo_small.jpg", type="image/jpg")
+        block head
+            title Admin - बिहार बानी
+        link(rel="icon", href="/logo_dark.jpg", type="image/jpg")
         link(rel="stylesheet", href="/style.css")
         link(rel="stylesheet", href="/styleM.css")
         link(rel="stylesheet", href="/admin.css")
@@ -18,25 +19,34 @@ html(lang="hi")
             .header-logo
                 h1
                     a(href="/")
-                        span.bihar BIHAR
-                        span.baani BAANI
+                        span.biharbaani
+                            span(class="bb", style="font-family: Harrington;") B
+                            span IHAR 
+                            span(class="bb", style="font-family: Harrington;") B
+                            span AANI
                 p#todayDate
         .container
             block content
         footer
-            h3 Follow us on
-            div
-                a(href="")
-                    span.fab.fa-facebook-square
-                a(href="")
-                    span.fab.fa-twitter-square
-                a(href="")
-                    span.fab.fa-linkedin
-                a(href="")
-                    span.fab.fa-instagram-square
-            h3 Write to us at
-            a.mail(href="")
-                span.fas.fa-envelope-open
+            .followus
+                h3 Follow us on
+                div
+                    a(href="")
+                        span.fab.fa-facebook-square
+                    a(href="")
+                        span.fab.fa-twitter-square
+                    a(href="")
+                        span.fab.fa-instagram-square
+                    a(href="")
+                        span.fab.fa-youtube-square
+            img(src="/banner_dark.jpg", alt="Bihar Baani")
+            .contactus
+                h3 Contact us
+                .contactus-links
+                    a(href="mailto:biharbaani@gmail.com").contactus-links-mail
+                        span.fas.fa-envelope-open
+                        span biharbaani@gmail.com
+                    //- a(href="tel:")
             p
                 span Designed and developed by
                 span

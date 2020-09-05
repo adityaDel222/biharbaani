@@ -1,4 +1,9 @@
 extends layout
+block head
+    if(hindiHeading === 'हेडलाइंस')
+        title बिहार बानी - बिहार की आवाज़
+    else
+        title= hindiHeading + " - बिहार बानी"
 block content
     .mini-articles-list
         .breaking-news
