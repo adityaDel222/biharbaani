@@ -106,7 +106,6 @@
     .header-logo h1 .biharbaani {
         font-family: 'Times New Roman', Times, serif;
         color: #333;
-        -webkit-text-stroke: 0.2px #fff;
         text-shadow: 1px 1px 3px rgb(150, 100, 0);
         letter-spacing: 7px;
     }

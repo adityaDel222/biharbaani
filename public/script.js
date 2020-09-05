@@ -11,6 +11,7 @@ $(document).ready(() => {
             $('header').css('box-shadow', '0 2px 2px 2px rgba(150, 100, 0, 0.25)');
             $('.header-logo').css('padding', '0');
             $('.header-logo h1').css('font-size', '30px');
+            $('.bb').removeClass('bbm');
             $('.bb').css('font-size', '30px');
             $('#todayDate').css('font-size', '15px');
             $('header').css('background-color', '#fcfce3');
@@ -18,7 +19,8 @@ $(document).ready(() => {
             $('header').css('box-shadow', 'none');
             $('.header-logo').css('padding', '5px');
             $('.header-logo h1').css('font-size', '50px');
-            $('.bb').css('font-size', '72px');
+            $('.bb').css('font-size', '65px');
+            $('.bb').addClass('bbM');
             $('#todayDate').css('font-size', '18px');
             $('header').css('background-color', '#fcfce3');
         }
