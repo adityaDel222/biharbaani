@@ -43,9 +43,14 @@ html(lang="hi")
                 li
                     a(href="/sampark") संपर्क करें
         header
-            .weather
-            //- .logo
-                img(src="./logo.jpg", alt="BiharBaani")
+            .covid
+                .btn
+                    .side.top-side
+                        span भारत कोविड अपडेट
+                        span#covid-india
+                    .side.back-side
+                        span बिहार कोविड अपडेट
+                        span#covid-bihar
             .header-logo
                 h1
                     a(href="/")
@@ -140,19 +145,25 @@ html(lang="hi")
                 p(style="text-align: center; margin: 0;") Advertisement
                 img(src="https://www.health.gov.au/sites/default/files/images/publications/2020/03/coronavirus-covid-19-print-ads-good-hygiene-is-in-your-hands_0.jpg", alt="Advertisement")
         footer
-            h3 Follow us on
-            div
-                a(href="")
-                    span.fab.fa-facebook-square
-                a(href="")
-                    span.fab.fa-twitter-square
-                a(href="")
-                    span.fab.fa-linkedin
-                a(href="")
-                    span.fab.fa-instagram-square
-            h3 Write to us at
-            a.mail(href="")
-                span.fas.fa-envelope-open
+            .followus
+                h3 Follow us on
+                div
+                    a(href="")
+                        span.fab.fa-facebook-square
+                    a(href="")
+                        span.fab.fa-twitter-square
+                    a(href="")
+                        span.fab.fa-instagram-square
+                    a(href="")
+                        span.fab.fa-youtube-square
+            img(src="./banner_dark.jpg", alt="Bihar Baani")
+            .contactus
+                h3 Contact us
+                .contactus-links
+                    a(href="mailto:biharbaani@gmail.com").contactus-links-mail
+                        span.fas.fa-envelope-open
+                        span biharbaani@gmail.com
+                    //- a(href="tel:")
             p
                 span Designed and developed by
                 span

@@ -1,6 +1,13 @@
 extends layout
 block content
     .mini-articles-list
+        .breaking-news
+            p
+                each article, i in articles
+                    if i < 5
+                        a(href="/article/"+article.id)= article.title
+                        if i < 4
+                            span(style="margin: 0 10px;") &bull;
         h3= hindiHeading
         each article, i in articles
             .mini-article-item

@@ -5,13 +5,24 @@
         justify-content: center;
         align-items: center;
     }
+    input[name="login"] {
+        width: 50%;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: hsla(200, 50%, 50%, 0.8);
+    }
+    input[name="login"]:hover {
+        background-color: hsla(200, 50%, 50%, 1);
+    }
     #logout {
         position: fixed;
-        top: 30px;
+        top: 15px;
         right: 50px;
         z-index: 3;
         border-radius: 50%;
-        font-size: 25px;
+        font-size: 20px;
         padding: 10px 15px;
         color: #555;
         box-shadow: 1px 1px 1px 1px #ddd;
@@ -86,10 +97,31 @@
         width: 100%;
         height: 100px;
     }
-    input[name="submit"] {
-        width: 20%;
+    .submitreset {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 75%;
+    }
+    input[name="submit"], input[name="clear"] {
+        width: 70%;
         cursor: pointer;
         margin: 20px 0 0 0;
+        border: none;
+    }
+    input[name="submit"] {
+        background-color: hsla(200, 50%, 50%, 0.5);
+    }
+    input[name="submit"]:hover {
+        background-color: hsla(200, 50%, 50%, 0.7);
+    }
+    input[name="clear"] {
+        background-color: #f55;
+        color: #fff;
+        width: 25%;
+    }
+    input[name="clear"]:hover {
+        background-color: #f33;
     }
     .article-list {
         display: flex;
