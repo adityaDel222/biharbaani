@@ -8,7 +8,7 @@ block content
         h3(style="border-bottom: 1.5px solid #333;") Add Article
         h3
             a(href="/admin/deletearticle") Delete Article
-    form(action="/admin/submit", method="POST")
+    form(id="article-entry", action="/admin/submit", method="POST")
         input(type="text", name="title", placeholder="Title", required, autofocus)
         input(type="subtitle", name="subtitle", placeholder="Subtitle", required)
         .field1
@@ -25,25 +25,25 @@ block content
                 option(value="aapke-sandesh") आपके संदेश
             .date-time-field
                 .date-field
-                    select(name="dayselect", required)
+                    select(id="day-select", name="dayselect", required)
                         option(value="", selected, disabled) Day
                         - var n = 1
                         while n <= 31
                             option(value=n)= n++
-                    select(name="monthselect", required)
+                    select(id="month-select", name="monthselect", required)
                         option(value="", selected, disabled) Month
                         - var months = ['Jan', 'Feb', 'Mar', 'Arp', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                         each month, i in months
                             option(value=month)= month
-                    select(name="yearselect", required)
+                    select(id="year-select", name="yearselect", required)
                         option(value="", selected, disabled) Year
                         - var year = new Date().getFullYear()
                         - var yearCounter = year
                         while yearCounter >= year - 50
                             option(value=yearCounter)= yearCounter--
                 .time-field
-                    input(type="number", name="hour", min="0", max="24", placeholder="00", required)
-                    input(type="number", name="minute", min="0", max="59", placeholder="00", required)
+                    input(id="hour-select", type="number", name="hour", min="0", max="24", placeholder="00", required)
+                    input(id="minute-select", type="number", name="minute", min="0", max="59", placeholder="00", required)
         .field2
             input(type="text", name="by", placeholder="Author", required)
             input(type="text", name="location", placeholder="Location", required)

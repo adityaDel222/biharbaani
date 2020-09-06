@@ -248,7 +248,7 @@ router.get('/article/:id', (req, res) => {
                         relArticlesList: relArticlesList
                     });
                 }
-            }).limit(10);
+            }).limit(20);
         }
     });
 });

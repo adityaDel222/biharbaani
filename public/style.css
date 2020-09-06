@@ -41,6 +41,7 @@
         left: 62px;
         width: 150px;
         height: 50px;
+        cursor: move;
     }
     .btn {
         position: relative;

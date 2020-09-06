@@ -31,50 +31,20 @@ $(document).ready(() => {
     $('.hidden-menu').hide();
     $('.show-menu-icon').click(() => {
         $('.hidden-menu').animate({
-            width: 'toggle'
-        });
-        $('.show-menu-icon').hide(500);
-        $('.hide-menu-icon').show(500);
+            width: 'toggle',
+            display: 'flex'
+        }, 300);
+        $('.hidden-menu ul').show(100);
+        $('.show-menu-icon').hide(300);
+        $('.hide-menu-icon').show(300);
     });
     $('.hide-menu-icon').click(() => {
+        $('.hidden-menu ul').hide(100);
         $('.hidden-menu').animate({
-            width: 'toggle'
-        });
-        $('.hide-menu-icon').hide(500);
-        $('.show-menu-icon').show(500);
+            width: 'toggle',
+            display: 'none'
+        }, 300);
+        $('.hide-menu-icon').hide(300);
+        $('.show-menu-icon').show(300);
     });
-});
-$(document).ready(() => {
-    fetch('https://api.covid19api.com/summary')
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('covid-india').innerHTML = data.Countries.filter(country => {
-                return country.Country === "India";
-            })[0].TotalConfirmed})
-        .catch(err => console.error(err));
-    fetch('https://api.covidindiatracker.com/state_data.json')
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('covid-bihar').innerHTML = data.filter(state => {
-                return state.id === "IN-BR";
-        })[0].confirmed})
-        .catch(err => console.error(err));
-});
-let flag = false;
-let covidBtn = document.getElementsByClassName('btn')[0];
-const covidUpdate = () => {
-    if(flag === false) {
-        covidBtn.classList.add('btnChange');
-        flag = true;
-    } else {
-        covidBtn.classList.remove('btnChange');
-        flag = false;
-    }
-    return;
-};
-$(document).ready(() => {
-    setInterval(covidUpdate, 3000);
-});
-$(document).ready(() => {
-    $('.covid').draggable();
 });
