@@ -19,7 +19,7 @@ $(document).ready(() => {
             $('header').css('box-shadow', 'none');
             $('.header-logo').css('padding', '5px');
             $('.header-logo h1').css('font-size', '50px');
-            $('.bb').css('font-size', '65px');
+            $('.bb').css('font-size', '72px');
             $('.bb').addClass('bbM');
             $('#todayDate').css('font-size', '18px');
             $('header').css('background-color', '#fcfce3');

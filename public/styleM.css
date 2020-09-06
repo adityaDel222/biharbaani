@@ -2,6 +2,7 @@
     :root {
         --navbar-transition-speed: 0.25s;
         --topMargin: 10px;
+        --sidePadding: 0 10px;
     }
     * {
         box-sizing: border-box;
@@ -128,7 +129,7 @@
         transition: var(--navbar-transition-speed);
     }
     .header-logo h1 {
-        margin: 20px 0 0 0;
+        margin: 25px 0 0 0;
         transition: var(--navbar-transition-speed);
     }
     .header-logo h1 .biharbaani {
@@ -139,7 +140,8 @@
         letter-spacing: 5px;
     }
     .header-logo .bbM {
-        font-size: 65px;
+        font-family: 'Great Vibes', cursive !important;
+        font-size: 42px !important;
         transition: var(--navbar-transition-speed);
     }
     .header-logo p {
@@ -335,7 +337,7 @@
         text-transform: uppercase;
         font-size: 12px;
         text-align: justify;
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .full-article p#article-path span a {
         color: hsla(50, 50%, 50%, 1);
@@ -344,7 +346,7 @@
         margin: 0;
         font-size: 35px;
         margin-top: var(--topMargin);
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .article-illustration {
         display: flex;
@@ -361,33 +363,33 @@
         margin: 0;
         font-size: 15px;
         text-align: justify;
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .full-article h3 {
         margin: 0;
         font-size: 20px;
         margin-top: var(--topMargin);
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .full-article p#datetime {
         margin: 0;
         margin-top: var(--topMargin);
         color: hsla(200, 50%, 50%, 1);
         font-size: 12px;
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .full-article p#by {
         margin: 0;
         margin-top: var(--topMargin);
         color: hsla(50, 50%, 50%, 1);
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .full-article p#content {
         margin: 0;
         margin-top: var(--topMargin);
         text-align: justify;
         line-height: 25px;
-        padding: 0 5px;
+        padding: var(--sidePadding);
     }
     .full-article p#content span#location {
         font-weight: bold;
