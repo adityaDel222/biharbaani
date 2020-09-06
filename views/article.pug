@@ -22,6 +22,7 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
         link(rel="stylesheet", href="/styleM.css")
         script(defer, src="https://code.jquery.com/jquery-3.5.1.js")
         script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js")
+        script(defer, src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
         script(defer, src="/script.js")
     body
         //- a.enter-admin(href="/admin") Admin
@@ -189,13 +190,13 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
                                 .mini-article-item-left
                                     h2
                                         a(href="/article/"+relArticle.id)= relArticle.title
-                                    - let DT = article.date.dayDB + ' ' + article.date.monthDB + ' ' + article.date.yearDB
-                                    if article.time.hourDB < 12
-                                        - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' AM IST'
-                                    else if article.time.hourDB == 12
-                                        - DT += ' ' + article.time.hourDB + ':' + article.time.minuteDB + ' PM IST'
+                                    - let DT = relArticle.date.dayDB + ' ' + relArticle.date.monthDB + ' ' + relArticle.date.yearDB
+                                    if relArticle.time.hourDB < 12
+                                        - DT += ' ' + relArticle.time.hourDB + ':' + relArticle.time.minuteDB + ' AM IST'
+                                    else if relArticle.time.hourDB == 12
+                                        - DT += ' ' + relArticle.time.hourDB + ':' + relArticle.time.minuteDB + ' PM IST'
                                     else
-                                        - DT += ' ' + (article.time.hourDB - 12) + ':' + article.time.minuteDB + ' PM IST'
+                                        - DT += ' ' + (relArticle.time.hourDB - 12) + ':' + relArticle.time.minuteDB + ' PM IST'
                                     p#datetime= DT
                                     p= relArticle.subtitle
                                 .mini-article-item-right

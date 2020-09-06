@@ -75,3 +75,6 @@ const covidUpdate = () => {
 $(document).ready(() => {
     setInterval(covidUpdate, 3000);
 });
+$(document).ready(() => {
+    $('.covid').draggable();
+});

@@ -66,9 +66,10 @@
     .covid {
         width: 100%;
         position: absolute;
-        top: 550px;
+        top: 450px;
         width: 150px;
         height: 50px;
+        cursor: move;
     }
     .btn {
         position: relative;
