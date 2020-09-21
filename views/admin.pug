@@ -47,8 +47,9 @@ block content
         .field2
             input(type="text", name="by", placeholder="Author", required)
             input(type="text", name="location", placeholder="Location", required)
-        input(type="text", name="imgurl", placeholder="Image URL", required)
+        input(type="text", name="imgurl", placeholder="Image URL")
         input(type="text", name="imgcaption", placeholder="Image Caption", required)
+        input(type="file", name="imagefile", class="filepond")
         textarea(name="para1", placeholder="Content Para 1", required)
         textarea(name="para2", placeholder="Content Para 2")
         textarea(name="para3", placeholder="Content Para 3")

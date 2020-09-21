@@ -112,6 +112,7 @@ router.post('/submit', (req, res) => {
     console.log('Title: ' + req.body.title);
     console.log('Subtitle: ' + req.body.subtitle);
     console.log('Category: ' + req.body.category);
+    const imgEnc = JSON.parse(req.body.imagefile);
     const newArticle = new articles({
         title: req.body.title,
         date: {
@@ -127,6 +128,8 @@ router.post('/submit', (req, res) => {
         location: req.body.location,
         subtitle: req.body.subtitle,
         image: {
+            imageFile: new Buffer.from(imgEnc.data, "base64"),
+            imageType: imgEnc.type,
             url: req.body.imgurl,
             caption: req.body.imgcaption
         },
@@ -143,10 +146,21 @@ router.post('/submit', (req, res) => {
         if(err) {
             console.error(err);
         } else {
-            console.log('Articles saved to database');
+            console.log('Article saved to database');
         }
     })
     res.redirect('/');
 });
+
+const saveArticleImage = (newArticle, articleImageEnc) => {
+    if (articleImageEnc === null) {
+        return;
+    }
+    const articleImage = JSON.parse(articleImageEnc);
+    if (articleImage !== null && imageMimeTypes.incluces(articleImage.type)) {
+        newArticle.image.imageFile = new Buffer.from(articleImage.data, "base64");
+        newArticle.image.imageType = articleImage.type;
+    }
+};
 
 module.exports = router;

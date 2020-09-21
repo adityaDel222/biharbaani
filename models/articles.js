@@ -15,7 +15,9 @@ const articleSchema = mongoose.Schema({
     location: { type: String, required: true },
     subtitle: { type: String, required: true },
     image: {
-        url: { type: String, required: true },
+        imageFile: { type: Buffer, required: true },
+        imageType: { type: String, required: true },
+        url: { type: String, required: false },
         caption: { type: String, required: true }
     },
     content: {
@@ -27,6 +29,12 @@ const articleSchema = mongoose.Schema({
     },
     category: { type: String, required: true }
 }, { collection: 'articles' });
+
+articleSchema.virtual('imageFile').get(() => {
+    // if (this.image.imageFile != null && this.image.imageType != null) {
+        return `data:${this.image.imageType};charset=utf-8;base64,${this.image.imageFile.toString('base64')}`;
+    // }
+});
 
 const articles = mongoose.model('articles', articleSchema);
 module.exports = articles;

@@ -99,6 +99,10 @@
     .field2 input {
         width: 49%;
     }
+    .filepond {
+        width: 100%;
+        margin: 0;
+    }
     textarea {
         width: 100%;
         height: 100px;

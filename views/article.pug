@@ -8,7 +8,7 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
         meta(http-equiv="content-type", content="text/html;charset=UTF-8")
         title= article.title + ' - बिहार बानी'
         meta(name="description", content=article.subtitle)
-        meta(property="og:title", content="New - Test Title")
+        meta(property="og:title", content=article.title)
         meta(property="og:type", content="article")
         //- meta(property="og:image:secure_url", content="https://resizeimage.net/viewimg/jX3iBTA42Lb0WyFw/KrNBr/test_image.jpg")
         meta(property="og:image", content="/test_image_resized.jpg")
@@ -17,16 +17,16 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
         meta(property="og:url", content="https://biharbaani.herokuapp.com/article/"+article.url)
         meta(property="og:description", content=article.subtitle)
         meta(property="og:site_name", content="https://biharbaani.herokuapp.com/")
-        link(rel="icon", href="/logo_dark.jpg", type="image/jpg")
+        link(rel="icon", href="/images/logo_dark.jpg", type="image/jpg")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap")
-        link(rel="stylesheet", href="/style.css")
-        link(rel="stylesheet", href="/styleM.css")
+        link(rel="stylesheet", href="/styles/style.css")
+        link(rel="stylesheet", href="/styles/styleM.css")
         script(defer, src="https://code.jquery.com/jquery-3.5.1.js")
         script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js")
         script(defer, src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
-        script(defer, src="/jquery.ui.touch-punch.min.js")
-        script(defer, src="/script.js")
-        script(defer, src="/covid.js")
+        script(defer, src="/scripts/jquery.ui.touch-punch.min.js")
+        script(defer, src="/scripts/script.js")
+        script(defer, src="/scripts/covid.js")
     body
         //- a.enter-admin(href="/admin") Admin
         span.show-menu-icon.fas.fa-bars
@@ -166,7 +166,7 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
                         span= ' > ' + article.title
                     h1= article.title
                     .article-illustration
-                        img(src=article.image.url)
+                        img(src=article.image.imageFile)
                         p= article.image.caption
                     h3= article.subtitle
                     a(href="https://www.linkedin.com/shareArticle?mini=true&url=https://biharbaani.herokuapp.com/article/"+article.id+"&title="+article.title+"&summary="+article.subtitle+"&source=/", target="_blank") Share on LinkedIn
@@ -221,7 +221,7 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
                         span.fab.fa-youtube
                     a(href="")
                         span.fab.fa-instagram-square
-            img(src="/banner_dark.jpg", alt="Bihar Baani")
+            img(src="/images/banner_dark.jpg", alt="Bihar Baani")
             .contactus
                 h3 Contact us
                 .contactus-links

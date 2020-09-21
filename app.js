@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const filepond = require('filepond');
 require('dotenv').config();
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
