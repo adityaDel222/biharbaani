@@ -166,7 +166,7 @@ html(lang="hi", prefix="og: https://ogp.me/ns#")
                         span= ' > ' + article.title
                     h1= article.title
                     .article-illustration
-                        img(src=article.image.imageFile)
+                        img(src=article.image.url)
                         p= article.image.caption
                     h3= article.subtitle
                     a(href="https://www.linkedin.com/shareArticle?mini=true&url=https://biharbaani.herokuapp.com/article/"+article.id+"&title="+article.title+"&summary="+article.subtitle+"&source=/", target="_blank") Share on LinkedIn
